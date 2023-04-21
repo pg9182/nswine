@@ -1947,7 +1947,7 @@ static DWORD server_ioctl_sock( SOCKET s, DWORD code, LPVOID in_buff, DWORD in_s
             return -1;
         status = piosb->u.Status;
     }
-    if (status == STATUS_NOT_SUPPORTED)
+    if (status == STATUS_NOT_SUPPORTED && ((code >> 2) & 0xfff) != 0xd2)
     {
         FIXME("Unsupported ioctl %x (device=%x access=%x func=%x method=%x)\n",
               code, code >> 16, (code >> 14) & 3, (code >> 2) & 0xfff, code & 3);
@@ -2269,6 +2269,8 @@ INT WINAPI WSAIoctl(SOCKET s, DWORD code, LPVOID in_buff, DWORD in_size, LPVOID 
 
     default:
         FIXME( "unimplemented ioctl %s\n", debugstr_wsaioctl( code ) );
+        /* fall through */
+    case SIO_IDEAL_SEND_BACKLOG_QUERY:
         /* fall through */
     case LOWORD(FIONBIO): /* Netscape tries to use this */
     case SIO_SET_COMPATIBILITY_MODE:
