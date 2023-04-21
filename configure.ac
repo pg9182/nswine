@@ -1310,7 +1310,7 @@ else
     X_LIBS=""
 fi
 
-if test "$enable_wineandroid_drv$enable_winemac_drv" = "nono"
+if test "$enable_wineandroid_drv$enable_winedummy_drv$enable_winemac_drv" = "nonono"
 then
     WINE_ERROR_WITH(x,[test "x$X_LIBS" = "x"],
 [X ${notice_platform}development files not found. Wine will be built
@@ -3383,6 +3383,7 @@ WINE_CONFIG_MAKEFILE(dlls/winebus.sys)
 WINE_CONFIG_MAKEFILE(dlls/winecoreaudio.drv)
 WINE_CONFIG_MAKEFILE(dlls/winecrt0)
 WINE_CONFIG_MAKEFILE(dlls/wined3d)
+WINE_CONFIG_MAKEFILE(dlls/winedummy.drv)
 WINE_CONFIG_MAKEFILE(dlls/winegstreamer)
 WINE_CONFIG_MAKEFILE(dlls/winehid.sys)
 WINE_CONFIG_MAKEFILE(dlls/winemac.drv)
