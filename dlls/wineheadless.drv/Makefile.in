@@ -1,0 +1,4 @@
+MODULE = wineheadless.drv
+UNIXLIB = wineheadless.so
+UNIX_LIBS = -lwin32u -lm
+SOURCES = dllmain.c headlessdrv.c version.rc

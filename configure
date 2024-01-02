@@ -1506,6 +1506,7 @@ enable_winecoreaudio_drv
 enable_winecrt0
 enable_wined3d
 enable_winegstreamer
+enable_wineheadless_drv
 enable_winehid_sys
 enable_winemac_drv
 enable_winemapi
@@ -22426,6 +22427,7 @@ wine_fn_config_makefile dlls/winecoreaudio.drv enable_winecoreaudio_drv
 wine_fn_config_makefile dlls/winecrt0 enable_winecrt0
 wine_fn_config_makefile dlls/wined3d enable_wined3d
 wine_fn_config_makefile dlls/winegstreamer enable_winegstreamer
+wine_fn_config_makefile dlls/wineheadless.drv enable_wineheadless_drv
 wine_fn_config_makefile dlls/winehid.sys enable_winehid_sys
 wine_fn_config_makefile dlls/winemac.drv enable_winemac_drv
 wine_fn_config_makefile dlls/winemapi enable_winemapi
